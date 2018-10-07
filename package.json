@@ -1,0 +1,23 @@
+{
+  "name": "campus_system",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://muhammadsarim555.github.io/campus_system",
+  "dependencies": {
+    "firebase": "^5.5.3",
+    "gh-pages": "^2.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
