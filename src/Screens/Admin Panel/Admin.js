@@ -24,21 +24,7 @@ class Admin extends Component {
     }
   }
   
-  loginAuthentication(){
-
-  }
   
-  login(){
-    const {loginValue} = this.state;
-    return <div>  
-    <input value={loginValue} 
-    onChange={(e) => {this.setState({
-      loginValue: e.target.value
-    })}
-  } />
-  <button onClick={this.loginAuthentication.bind(this)}> Submit </button>
-  </div>
-  }
 
   
   render() {
