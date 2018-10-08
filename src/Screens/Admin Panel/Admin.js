@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import Signup from '../Authentication/SignUp/SignUp';
+import Login from '../Authentication/Login/Login';
 // import './App.css';
 
 
@@ -18,7 +18,7 @@ class Admin extends Component {
   return (
       <div className="App">
           <h1>Admin Panel</h1>
-          <Signup />
+          <Login />
           </div>
     );
   }
