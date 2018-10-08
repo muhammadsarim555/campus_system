@@ -21,11 +21,15 @@ class Login extends Component {
         auth.
             signInWithEmailAndPassword(this.state.loginValue , this.state.check)
             .then((s)=>{
-
+                
+                console.log(auth.currentUser.uid)
             }).catch((e)=>{
                 console.log(e)
             })
     }
+
+// logouet
+// auth.signOut()
 
 
     render() {

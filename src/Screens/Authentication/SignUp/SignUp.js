@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from  '../../../Component/Firebase/Firebase';
 
 
+
   
   const db = firebase.database();
   const auth = firebase.auth();
@@ -35,10 +36,10 @@ class SignUp extends Component {
     checkFunc(){
     console.log("tkhis is working")
     let {loginValue , check} = this.state;
-    firebase.auth().createUserWithEmailAndPassword(loginValue.value , check.value).then((snapshot)=>{
-        console.log(snapshot , 'snapshot');
+    firebase.auth().createUserWithEmailAndPassword(this.state.loginValue , this.state.check).then((snapshot)=>{
+        // console.log(snapshot , 'snapshot');
         // const {uid} = auth.currentUser;
-        // console.log(uid , "i am uid <<=")
+        console.log(snapshot, "i am uid <<=")
     })
     .catch(function(error) {
         // Handle Errors here.
@@ -66,7 +67,7 @@ class SignUp extends Component {
         check: e.target.value
     })}
   } />
-  <button onClick={this.checkFunc} > Submit </button>
+  <button onClick={this.checkFunc.bind(this)} > Submit </button>
             </div>
         );
     }
