@@ -4,18 +4,18 @@ import Firebase from './Component/Firebase/Firebase';
 
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       user: {},
     }
   }
 
-  authListener(){
+  authListener() {
     Firebase.auth().onAuthStateChanged((user) => {
-      if(user){
-        this.setState({user})
-      }else{this.setState({user:null})}
+      if (user) {
+        this.setState({ user })
+      } else { this.setState({ user: null }) }
     })
   }
 
