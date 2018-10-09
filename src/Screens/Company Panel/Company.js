@@ -1,17 +1,41 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
+import Login from '../Authentication/Login/Login';
+import { Link } from 'react-router-dom';
+import SignUp from '../Authentication/SignUp/SignUp';
 
 class Company extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isLogin: true,
+    }
+  }
+
+  
+  updateState(){
+    this.setState({
+      isLogin: false,
+    })
+  }
+
+
   render() {
+
+    const isLogin = this.state;
+
     return (
       <div className="App">
-          <h1>Company</h1>
+        <h1>Company</h1>
 
+        
+          <Login />
+        
+              <SignUp/>
       </div>
     );
   }
 }
 
 export default Company;
+
+{/* <Link to="/login"> Login </Link></h5> */}

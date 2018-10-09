@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import Login from '../Authentication/Login/Login';
-// import './App.css';
 
 
 class Admin extends Component {
@@ -10,8 +8,6 @@ class Admin extends Component {
     this.state = {
     }
   }
-
-
 
 
   render() {
