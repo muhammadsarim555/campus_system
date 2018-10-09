@@ -11,8 +11,8 @@ class SignUp extends Component {
     constructor(){
         super();
         this.state = {
-            loginValue : '',
-            check: '',
+            email : '',
+            password: '',
 
         }
         // this.createNewUser = this.createNewUser.bind(this);
@@ -35,8 +35,8 @@ class SignUp extends Component {
     
     checkFunc(){
     console.log("tkhis is working")
-    let {loginValue , check} = this.state;
-    firebase.auth().createUserWithEmailAndPassword(this.state.loginValue , this.state.check).then((snapshot)=>{
+    let {email , password} = this.state;
+    firebase.auth().createUserWithEmailAndPassword(email , password).then((snapshot)=>{
         // console.log(snapshot , 'snapshot');
         // const {uid} = auth.currentUser;
         console.log(snapshot, "i am uid <<=")
@@ -53,21 +53,21 @@ class SignUp extends Component {
 
 
     render() {
-    const {loginValue , check} = this.state;
+    const {email , password} = this.state;
         
         return (
             <div className="App">
-            <input value={loginValue} 
+            <input value={email} 
     onChange={(e) => {this.setState({
-      loginValue: e.target.value
+        email: e.target.value
     })}
   } />
-  <input value={check} 
+  <input type="password"  value={password} 
     onChange={(e) => {this.setState({
-        check: e.target.value
+        password: e.target.value
     })}
   } />
-  <button onClick={this.checkFunc.bind(this)} > Submit </button>
+  <button onClick={this.checkFunc.bind(this)} > SignUp </button>
             </div>
         );
     }

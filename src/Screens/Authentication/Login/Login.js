@@ -47,7 +47,7 @@ class Login extends Component {
         check: e.target.value
     })}
   } />
-  <button onClick={this.login.bind(this)} > Submit </button>
+  <button onClick={this.login.bind(this)} > Login </button>
             </div>
         );
     }
