@@ -11,18 +11,18 @@ class App extends Component {
     }
   }
 
-  authListener() {
-    Firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ user })
-      } else { this.setState({ user: null }) }
-    })
-  }
+  // authListener() {
+  //   Firebase.auth().onAuthStateChanged((user) => {
+  //     if (user) {
+  //       this.setState({ user })
+  //     } else { this.setState({ user: null }) }
+  //   })
+  // }
 
   render() {
     return (
       <div className="App">
-
+          
       </div>
     );
   }

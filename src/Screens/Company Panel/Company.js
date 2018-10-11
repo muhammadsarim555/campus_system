@@ -11,8 +11,9 @@ class Company extends Component {
     }
   }
 
-  
-  updateState(){
+
+  updateState() {
+    // const 
     this.setState({
       isLogin: false,
     })
@@ -27,10 +28,9 @@ class Company extends Component {
       <div className="App">
         <h1>Company</h1>
 
-        
-          <Login />
-        
-              <SignUp/>
+        {isLogin ? <Login /> : <SignUp />}
+
+
       </div>
     );
   }
@@ -38,4 +38,4 @@ class Company extends Component {
 
 export default Company;
 
-{/* <Link to="/login"> Login </Link></h5> */}
+{/* <Link to="/login"> Login </Link></h5> */ }

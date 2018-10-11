@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Login from '../Authentication/Login/Login';
+import Resumes from '../Resumes/Resumes';
 
 
 class Admin extends Component {
@@ -15,6 +16,7 @@ class Admin extends Component {
       <div className="App">
         <h1>Admin Panel</h1>
         <Login />
+        {/* <Resumes /> */}
       </div>
     );
   }

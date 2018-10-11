@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../../../Component/Firebase/Firebase';
+import Resumes from '../../Resumes/Resumes';
+
 
 
 
@@ -12,31 +14,23 @@ class Login extends Component {
         this.state = {
             loginValue: '',
             check: '',
+            user: {},
 
         }
         // this.createNewUser = this.createNewUser.bind(this);
     }
 
-    login() {
-        auth.
-            signInWithEmailAndPassword(this.state.loginValue, this.state.check)
-            .then((s) => {
-
-                console.log(auth.currentUser.uid)
-            }).catch((e) => {
-                console.log(e)
-            })
-    }
-
-    // logouet
-    // auth.signOut()
+        
+       componentDidMount(){
+           this.checkUser();
+       } 
 
 
-    render() {
+       gettingValue(){
         const { loginValue, check } = this.state;
-
-        return (
-            <div className="App">
+           
+           return (
+               <div>
                 <input type="email" value={loginValue}
                     onChange={(e) => {
                         this.setState({
@@ -52,6 +46,48 @@ class Login extends Component {
                     }
                     } />
                 <button onClick={this.login.bind(this)} > Login </button>
+                   </div>
+           )
+       }
+
+
+    login() {
+        auth.
+            signInWithEmailAndPassword(this.state.loginValue, this.state.check)
+            .then((s) => {
+
+                console.log(auth.currentUser.uid)
+            }).catch((e) => {
+                console.log(e)
+            })
+    }
+
+    // logout mathod 
+    
+
+//  if user is here or not
+
+    checkUser(){
+        auth.onAuthStateChanged((user)=>{
+            if(user){
+                this.setState({
+                    user
+                })
+            }
+            else{this.setState({
+                user:null
+            })}
+        })
+    }
+
+    render() {
+        // console.log(auth.currentUser.uid)
+        
+        return (
+            <div className="App">
+               {
+                   this.state.user ? (<Resumes/>) : (this.gettingValue())
+               }
             </div>
         );
     }
