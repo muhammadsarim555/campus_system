@@ -65,7 +65,7 @@ class Login extends Component {
     // logout mathod 
     
 
-//  if user is here or not
+//  if user is here/login or not
 
     checkUser(){
         auth.onAuthStateChanged((user)=>{
